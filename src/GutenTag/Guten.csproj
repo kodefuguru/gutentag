@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E245C1D-E6BF-488E-AC97-7DAB3FAF9AF1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Guten</RootNamespace>
+    <AssemblyName>GutenTag</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ReceiveLowerCase.cs" />
+    <Compile Include="SetLowerCase.cs" />
+    <Compile Include="TagPropertyFactory.cs" />
+    <Compile Include="BooleanTagProperty.cs" />
+    <Compile Include="CollapsibleAttribute.cs" />
+    <Compile Include="CollapsibleTag.cs" />
+    <Compile Include="PropertyDefinitions.cs" />
+    <Compile Include="DefaultTagWriterFactory.cs" />
+    <Compile Include="Html\Abbr.cs" />
+    <Compile Include="Html\Address.cs" />
+    <Compile Include="Html\Area.cs" />
+    <Compile Include="Html\Article.cs" />
+    <Compile Include="Html\Aside.cs" />
+    <Compile Include="Html\Audio.cs" />
+    <Compile Include="Html\B.cs" />
+    <Compile Include="Html\Base.cs" />
+    <Compile Include="Html\Body.cs" />
+    <Compile Include="Html\Br.cs" />
+    <Compile Include="Html\Button.cs" />
+    <Compile Include="Html\Canvas.cs" />
+    <Compile Include="Html\Caption.cs" />
+    <Compile Include="Html\Cite.cs" />
+    <Compile Include="Html\Code.cs" />
+    <Compile Include="Html\Col.cs" />
+    <Compile Include="Html\ColGroup.cs" />
+    <Compile Include="Html\Command.cs" />
+    <Compile Include="Html\DataList.cs" />
+    <Compile Include="Html\DD.cs" />
+    <Compile Include="Html\Del.cs" />
+    <Compile Include="Html\Details.cs" />
+    <Compile Include="Html\Dfn.cs" />
+    <Compile Include="Html\Div.cs" />
+    <Compile Include="Html\DL.cs" />
+    <Compile Include="Html\DT.cs" />
+    <Compile Include="Html\Em.cs" />
+    <Compile Include="Html\Embed.cs" />
+    <Compile Include="Html\FieldSet.cs" />
+    <Compile Include="Html\FigCaption.cs" />
+    <Compile Include="Html\Figure.cs" />
+    <Compile Include="Html\Footer.cs" />
+    <Compile Include="Html\Form.cs" />
+    <Compile Include="Html\H1.cs" />
+    <Compile Include="Html\H2.cs" />
+    <Compile Include="Html\H3.cs" />
+    <Compile Include="Html\H4.cs" />
+    <Compile Include="Html\H5.cs" />
+    <Compile Include="Html\H6.cs" />
+    <Compile Include="Html\Head.cs" />
+    <Compile Include="Html\Header.cs" />
+    <Compile Include="Html\HGroup.cs" />
+    <Compile Include="Html\HR.cs" />
+    <Compile Include="Html\Html.cs" />
+    <Compile Include="Html\I.cs" />
+    <Compile Include="Html\IFrame.cs" />
+    <Compile Include="Html\Img.cs" />
+    <Compile Include="Html\Input.cs" />
+    <Compile Include="Html\Ins.cs" />
+    <Compile Include="Html\Kbd.cs" />
+    <Compile Include="Html\KeyGen.cs" />
+    <Compile Include="Html\Label.cs" />
+    <Compile Include="Html\Legend.cs" />
+    <Compile Include="Html\LI.cs" />
+    <Compile Include="Html\Link.cs" />
+    <Compile Include="Html\Map.cs" />
+    <Compile Include="Html\Mark.cs" />
+    <Compile Include="Html\Menu.cs" />
+    <Compile Include="Html\Meta.cs" />
+    <Compile Include="Html\Meter.cs" />
+    <Compile Include="Html\Nav.cs" />
+    <Compile Include="Html\NoScript.cs" />
+    <Compile Include="Html\Obj.cs" />
+    <Compile Include="Html\OL.cs" />
+    <Compile Include="Html\OptGroup.cs" />
+    <Compile Include="Html\Option.cs" />
+    <Compile Include="Html\Output.cs" />
+    <Compile Include="Html\P.cs" />
+    <Compile Include="Html\Param.cs" />
+    <Compile Include="Html\Pre.cs" />
+    <Compile Include="Html\Progress.cs" />
+    <Compile Include="Html\Q.cs" />
+    <Compile Include="Html\RP.cs" />
+    <Compile Include="Html\RT.cs" />
+    <Compile Include="Html\Ruby.cs" />
+    <Compile Include="Html\S.cs" />
+    <Compile Include="Html\Samp.cs" />
+    <Compile Include="Html\Script.cs" />
+    <Compile Include="Html\Section.cs" />
+    <Compile Include="Html\Select.cs" />
+    <Compile Include="Html\Small.cs" />
+    <Compile Include="Html\Source.cs" />
+    <Compile Include="Html\Span.cs" />
+    <Compile Include="Html\Strong.cs" />
+    <Compile Include="Html\Style.cs" />
+    <Compile Include="Html\Sub.cs" />
+    <Compile Include="Html\Summary.cs" />
+    <Compile Include="Html\Sup.cs" />
+    <Compile Include="Html\Table.cs" />
+    <Compile Include="Html\A.cs" />
+    <Compile Include="Html\TBody.cs" />
+    <Compile Include="Html\TD.cs" />
+    <Compile Include="Html\TextArea.cs" />
+    <Compile Include="Html\TFoot.cs" />
+    <Compile Include="Html\TH.cs" />
+    <Compile Include="Html\THead.cs" />
+    <Compile Include="Html\Time.cs" />
+    <Compile Include="Html\Title.cs" />
+    <Compile Include="Html\TR.cs" />
+    <Compile Include="Html\Track.cs" />
+    <Compile Include="Html\U.cs" />
+    <Compile Include="Html\UL.cs" />
+    <Compile Include="Html\Var.cs" />
+    <Compile Include="Html\Video.cs" />
+    <Compile Include="Html\Wbr.cs" />
+    <Compile Include="ListTagProperty.cs" />
+    <Compile Include="SpaceSeparatedSet.cs" />
+    <Compile Include="StringPairs.cs" />
+    <Compile Include="Tag.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TagProperty.cs" />
+    <Compile Include="TagPropertyModifier.cs" />
+    <Compile Include="TagWriterFactory.cs" />
+    <Compile Include="TagWriter.cs" />
+    <Compile Include="VoidAttribute.cs" />
+    <Compile Include="VoidTag.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
