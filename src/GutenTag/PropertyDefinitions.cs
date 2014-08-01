@@ -1,6 +1,6 @@
 namespace Guten
 {
-    public abstract class PropertyDefinitions
+    internal abstract class PropertyDefinitions
     {
         public abstract void Register(TagPropertyFactory factory);
     }

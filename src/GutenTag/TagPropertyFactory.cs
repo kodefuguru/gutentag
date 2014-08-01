@@ -3,7 +3,7 @@ namespace Guten
     using System;
     using System.Collections.Generic;
 
-    public class TagPropertyFactory
+    internal class TagPropertyFactory
     {
         private readonly Dictionary<string, Func<TagProperty>> factories = new Dictionary<string, Func<TagProperty>>();
 

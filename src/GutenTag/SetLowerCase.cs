@@ -1,6 +1,6 @@
 namespace Guten
 {
-    public class SetLowerCase : TagPropertyModifier
+    internal class SetLowerCase : TagPropertyModifier
     {
         protected override string BeforeSet(string value, string current)
         {

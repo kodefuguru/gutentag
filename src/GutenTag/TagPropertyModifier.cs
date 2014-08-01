@@ -3,7 +3,7 @@ namespace Guten
     using System.Collections;
     using System.Collections.Generic;
 
-    public class TagPropertyModifier : IEnumerable<TagPropertyModifier>
+    internal class TagPropertyModifier : IEnumerable<TagPropertyModifier>
     {
         private TagPropertyModifier next;
 

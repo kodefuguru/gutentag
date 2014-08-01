@@ -4,15 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7E245C1D-E6BF-488E-AC97-7DAB3FAF9AF1}</ProjectGuid>
+    <ProjectGuid>{9B2839A4-AF69-448D-88C1-8DA86AADFECE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Guten</RootNamespace>
     <AssemblyName>GutenTag</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,14 +40,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ReceiveLowerCase.cs" />
-    <Compile Include="SetLowerCase.cs" />
-    <Compile Include="TagPropertyFactory.cs" />
-    <Compile Include="BooleanTagProperty.cs" />
-    <Compile Include="CollapsibleAttribute.cs" />
-    <Compile Include="CollapsibleTag.cs" />
-    <Compile Include="PropertyDefinitions.cs" />
-    <Compile Include="DefaultTagWriterFactory.cs" />
+    <Compile Include="..\GutenTag\BooleanTagProperty.cs">
+      <Link>BooleanTagProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\CollapsibleAttribute.cs">
+      <Link>CollapsibleAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\CollapsibleTag.cs">
+      <Link>CollapsibleTag.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\DefaultTagWriterFactory.cs">
+      <Link>DefaultTagWriterFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\EnumeratedTagProperty.cs">
+      <Link>EnumeratedTagProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\ListTagProperty.cs">
+      <Link>ListTagProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\PropertyDefinitions.cs">
+      <Link>PropertyDefinitions.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\ReceiveLowerCase.cs">
+      <Link>ReceiveLowerCase.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\SetLowerCase.cs">
+      <Link>SetLowerCase.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\SpaceSeparatedSet.cs">
+      <Link>SpaceSeparatedSet.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\StringPairs.cs">
+      <Link>StringPairs.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Tag.cs">
+      <Link>Tag.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\TagProperty.cs">
+      <Link>TagProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\TagPropertyFactory.cs">
+      <Link>TagPropertyFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\TagPropertyModifier.cs">
+      <Link>TagPropertyModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\TagWriter.cs">
+      <Link>TagWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\TagWriterFactory.cs">
+      <Link>TagWriterFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\VoidAttribute.cs">
+      <Link>VoidAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\VoidTag.cs">
+      <Link>VoidTag.cs</Link>
+    </Compile>
+    <Compile Include="Html\A.cs" />
     <Compile Include="Html\Abbr.cs" />
     <Compile Include="Html\Address.cs" />
     <Compile Include="Html\Area.cs" />
@@ -138,7 +190,6 @@
     <Compile Include="Html\Summary.cs" />
     <Compile Include="Html\Sup.cs" />
     <Compile Include="Html\Table.cs" />
-    <Compile Include="Html\A.cs" />
     <Compile Include="Html\TBody.cs" />
     <Compile Include="Html\TD.cs" />
     <Compile Include="Html\TextArea.cs" />
@@ -154,18 +205,7 @@
     <Compile Include="Html\Var.cs" />
     <Compile Include="Html\Video.cs" />
     <Compile Include="Html\Wbr.cs" />
-    <Compile Include="ListTagProperty.cs" />
-    <Compile Include="SpaceSeparatedSet.cs" />
-    <Compile Include="StringPairs.cs" />
-    <Compile Include="Tag.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TagProperty.cs" />
-    <Compile Include="TagPropertyModifier.cs" />
-    <Compile Include="TagWriterFactory.cs" />
-    <Compile Include="TagWriter.cs" />
-    <Compile Include="VoidAttribute.cs" />
-    <Compile Include="VoidTag.cs" />
+    <Compile Include="Tag.IHtmlString.cs" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

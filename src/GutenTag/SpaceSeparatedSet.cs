@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class SpaceSeparatedSet : ISet<string>
+    internal class SpaceSeparatedSet : ISet<string>
     {
         private readonly HashSet<string> hash;
 

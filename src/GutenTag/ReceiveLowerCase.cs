@@ -1,6 +1,6 @@
 namespace Guten
 {
-    public class ReceiveLowerCase : TagPropertyModifier
+    internal class ReceiveLowerCase : TagPropertyModifier
     {
         protected override string OnReceive(string value, string current)
         {

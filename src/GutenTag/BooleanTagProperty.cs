@@ -2,7 +2,7 @@ namespace Guten
 {
     using System;
 
-    public class BooleanTagProperty : TagProperty
+    internal class BooleanTagProperty : TagProperty
     {
         private string EmptyOrNull(string value)
         {

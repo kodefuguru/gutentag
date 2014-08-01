@@ -1,6 +1,6 @@
 namespace Guten
 {
-    public class ListTagProperty : TagProperty
+    internal class ListTagProperty : TagProperty
     {
         private readonly SpaceSeparatedSet value = new SpaceSeparatedSet();
 

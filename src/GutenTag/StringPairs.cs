@@ -12,7 +12,7 @@ namespace Guten
             return obj.GetType()
                       .GetProperties()
                       .Where(p => p.PropertyType == typeof(string))
-                      .Select(p => new KeyValuePair<string, string>(p.Name, p.GetValue(obj) as string));
+                      .Select(p => new KeyValuePair<string, string>(p.Name, p.GetValue(obj, null) as string));
         }
     }
 }

@@ -5,7 +5,7 @@
     using System.Collections.Generic;
     using System.Linq;
     
-    public class Tag : IEnumerable<Tag>, IEnumerable<KeyValuePair<string, string>>
+    public partial class Tag : IEnumerable<Tag>, IEnumerable<KeyValuePair<string, string>>
     {
         protected string Name { get; private set; }
 
@@ -20,7 +20,7 @@
             RegisterProperties(this.property);
         }
 
-        protected virtual void RegisterProperties(TagPropertyFactory factory)
+        internal virtual void RegisterProperties(TagPropertyFactory factory)
         {
             factory.Default<TagProperty>();
             factory.Register<ListTagProperty>("class");    
