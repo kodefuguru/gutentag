@@ -21,10 +21,9 @@ module.exports = (grunt) ->
             src: ['src/GutenTag/bin', 'src/GutenTag/obj', 'src/GutenTag.Tests/bin', 'src/GutenTag.Tests/obj']
         copy: 
             src:
-                expand: true
-                cwd: 'src/GutenTag/bin/release/'
-                src: ['GutenTag.dll']
-                dest: 'build/lib/'
+                files:
+                    'build/lib/GutenTag.dll': ['src/GutenTag/bin/release/GutenTag.dll']
+                    'build/lib/net40/GutenTag.dll': ['src/GutenTag.Web/bin/release/GutenTag.dll']
         msbuild:
             release:
                 options:
@@ -49,7 +48,7 @@ module.exports = (grunt) ->
                     projectUrl: '<%= pkg.homepage %>'
                     requireLicenseAcceptance: 'false'
                     tags: "<%= pkg.keywords.join(' ') %>"
-                    title: "<%= pkg.title %>"
+                    title: '<%= pkg.name %>'
                     version: '<%= pkg.version %>'
             nuspec:
                 src: 'templates/Package.nuspec'

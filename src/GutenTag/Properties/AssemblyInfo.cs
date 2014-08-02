@@ -1,7 +1,7 @@
 using System.Resources;
 using System.Reflection;
 [assembly: AssemblyTitle("GutenTag")]
-[assembly: AssemblyDescription("Markup in Declarative C#")]
+[assembly: AssemblyDescription("The closest thing to XML/HTML literals in C#")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("kodefuguru")]
 [assembly: AssemblyProduct("GutenTag")]

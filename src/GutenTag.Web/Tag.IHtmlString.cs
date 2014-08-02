@@ -1,4 +1,4 @@
-﻿namespace GutenTag
+﻿namespace Guten
 {
     using System.Web;
 
@@ -6,7 +6,7 @@
     {
         public string ToHtmlString()
         {
-            return new HtmlString(ToString()).ToHtmlString();
+            return ToString();
         }
     }
 }

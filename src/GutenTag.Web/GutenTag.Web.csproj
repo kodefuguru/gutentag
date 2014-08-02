@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Guten</RootNamespace>
     <AssemblyName>GutenTag</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -54,6 +55,321 @@
     </Compile>
     <Compile Include="..\GutenTag\EnumeratedTagProperty.cs">
       <Link>EnumeratedTagProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\A.cs">
+      <Link>Html\A.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Abbr.cs">
+      <Link>Html\Abbr.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Address.cs">
+      <Link>Html\Address.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Area.cs">
+      <Link>Html\Area.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Article.cs">
+      <Link>Html\Article.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Aside.cs">
+      <Link>Html\Aside.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Audio.cs">
+      <Link>Html\Audio.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\B.cs">
+      <Link>Html\B.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Base.cs">
+      <Link>Html\Base.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Body.cs">
+      <Link>Html\Body.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Br.cs">
+      <Link>Html\Br.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Button.cs">
+      <Link>Html\Button.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Canvas.cs">
+      <Link>Html\Canvas.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Caption.cs">
+      <Link>Html\Caption.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Cite.cs">
+      <Link>Html\Cite.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Code.cs">
+      <Link>Html\Code.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Col.cs">
+      <Link>Html\Col.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\ColGroup.cs">
+      <Link>Html\ColGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Command.cs">
+      <Link>Html\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\DataList.cs">
+      <Link>Html\DataList.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\DD.cs">
+      <Link>Html\DD.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Del.cs">
+      <Link>Html\Del.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Details.cs">
+      <Link>Html\Details.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Dfn.cs">
+      <Link>Html\Dfn.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Div.cs">
+      <Link>Html\Div.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\DL.cs">
+      <Link>Html\DL.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\DT.cs">
+      <Link>Html\DT.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Em.cs">
+      <Link>Html\Em.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Embed.cs">
+      <Link>Html\Embed.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\FieldSet.cs">
+      <Link>Html\FieldSet.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\FigCaption.cs">
+      <Link>Html\FigCaption.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Figure.cs">
+      <Link>Html\Figure.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Footer.cs">
+      <Link>Html\Footer.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Form.cs">
+      <Link>Html\Form.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\H1.cs">
+      <Link>Html\H1.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\H2.cs">
+      <Link>Html\H2.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\H3.cs">
+      <Link>Html\H3.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\H4.cs">
+      <Link>Html\H4.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\H5.cs">
+      <Link>Html\H5.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\H6.cs">
+      <Link>Html\H6.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Head.cs">
+      <Link>Html\Head.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Header.cs">
+      <Link>Html\Header.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\HGroup.cs">
+      <Link>Html\HGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\HR.cs">
+      <Link>Html\HR.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Html.cs">
+      <Link>Html\Html.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\I.cs">
+      <Link>Html\I.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\IFrame.cs">
+      <Link>Html\IFrame.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Img.cs">
+      <Link>Html\Img.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Input.cs">
+      <Link>Html\Input.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Ins.cs">
+      <Link>Html\Ins.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Kbd.cs">
+      <Link>Html\Kbd.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\KeyGen.cs">
+      <Link>Html\KeyGen.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Label.cs">
+      <Link>Html\Label.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Legend.cs">
+      <Link>Html\Legend.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\LI.cs">
+      <Link>Html\LI.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Link.cs">
+      <Link>Html\Link.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Map.cs">
+      <Link>Html\Map.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Mark.cs">
+      <Link>Html\Mark.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Menu.cs">
+      <Link>Html\Menu.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Meta.cs">
+      <Link>Html\Meta.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Meter.cs">
+      <Link>Html\Meter.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Nav.cs">
+      <Link>Html\Nav.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\NoScript.cs">
+      <Link>Html\NoScript.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Obj.cs">
+      <Link>Html\Obj.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\OL.cs">
+      <Link>Html\OL.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\OptGroup.cs">
+      <Link>Html\OptGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Option.cs">
+      <Link>Html\Option.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Output.cs">
+      <Link>Html\Output.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\P.cs">
+      <Link>Html\P.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Param.cs">
+      <Link>Html\Param.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Pre.cs">
+      <Link>Html\Pre.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Progress.cs">
+      <Link>Html\Progress.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Q.cs">
+      <Link>Html\Q.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\RP.cs">
+      <Link>Html\RP.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\RT.cs">
+      <Link>Html\RT.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Ruby.cs">
+      <Link>Html\Ruby.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\S.cs">
+      <Link>Html\S.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Samp.cs">
+      <Link>Html\Samp.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Script.cs">
+      <Link>Html\Script.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Section.cs">
+      <Link>Html\Section.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Select.cs">
+      <Link>Html\Select.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Small.cs">
+      <Link>Html\Small.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Source.cs">
+      <Link>Html\Source.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Span.cs">
+      <Link>Html\Span.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Strong.cs">
+      <Link>Html\Strong.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Style.cs">
+      <Link>Html\Style.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Sub.cs">
+      <Link>Html\Sub.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Summary.cs">
+      <Link>Html\Summary.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Sup.cs">
+      <Link>Html\Sup.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Table.cs">
+      <Link>Html\Table.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\TBody.cs">
+      <Link>Html\TBody.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\TD.cs">
+      <Link>Html\TD.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\TextArea.cs">
+      <Link>Html\TextArea.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\TFoot.cs">
+      <Link>Html\TFoot.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\TH.cs">
+      <Link>Html\TH.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\THead.cs">
+      <Link>Html\THead.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Time.cs">
+      <Link>Html\Time.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Title.cs">
+      <Link>Html\Title.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\TR.cs">
+      <Link>Html\TR.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Track.cs">
+      <Link>Html\Track.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\U.cs">
+      <Link>Html\U.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\UL.cs">
+      <Link>Html\UL.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Var.cs">
+      <Link>Html\Var.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Video.cs">
+      <Link>Html\Video.cs</Link>
+    </Compile>
+    <Compile Include="..\GutenTag\Html\Wbr.cs">
+      <Link>Html\Wbr.cs</Link>
     </Compile>
     <Compile Include="..\GutenTag\ListTagProperty.cs">
       <Link>ListTagProperty.cs</Link>
@@ -100,111 +416,6 @@
     <Compile Include="..\GutenTag\VoidTag.cs">
       <Link>VoidTag.cs</Link>
     </Compile>
-    <Compile Include="Html\A.cs" />
-    <Compile Include="Html\Abbr.cs" />
-    <Compile Include="Html\Address.cs" />
-    <Compile Include="Html\Area.cs" />
-    <Compile Include="Html\Article.cs" />
-    <Compile Include="Html\Aside.cs" />
-    <Compile Include="Html\Audio.cs" />
-    <Compile Include="Html\B.cs" />
-    <Compile Include="Html\Base.cs" />
-    <Compile Include="Html\Body.cs" />
-    <Compile Include="Html\Br.cs" />
-    <Compile Include="Html\Button.cs" />
-    <Compile Include="Html\Canvas.cs" />
-    <Compile Include="Html\Caption.cs" />
-    <Compile Include="Html\Cite.cs" />
-    <Compile Include="Html\Code.cs" />
-    <Compile Include="Html\Col.cs" />
-    <Compile Include="Html\ColGroup.cs" />
-    <Compile Include="Html\Command.cs" />
-    <Compile Include="Html\DataList.cs" />
-    <Compile Include="Html\DD.cs" />
-    <Compile Include="Html\Del.cs" />
-    <Compile Include="Html\Details.cs" />
-    <Compile Include="Html\Dfn.cs" />
-    <Compile Include="Html\Div.cs" />
-    <Compile Include="Html\DL.cs" />
-    <Compile Include="Html\DT.cs" />
-    <Compile Include="Html\Em.cs" />
-    <Compile Include="Html\Embed.cs" />
-    <Compile Include="Html\FieldSet.cs" />
-    <Compile Include="Html\FigCaption.cs" />
-    <Compile Include="Html\Figure.cs" />
-    <Compile Include="Html\Footer.cs" />
-    <Compile Include="Html\Form.cs" />
-    <Compile Include="Html\H1.cs" />
-    <Compile Include="Html\H2.cs" />
-    <Compile Include="Html\H3.cs" />
-    <Compile Include="Html\H4.cs" />
-    <Compile Include="Html\H5.cs" />
-    <Compile Include="Html\H6.cs" />
-    <Compile Include="Html\Head.cs" />
-    <Compile Include="Html\Header.cs" />
-    <Compile Include="Html\HGroup.cs" />
-    <Compile Include="Html\HR.cs" />
-    <Compile Include="Html\Html.cs" />
-    <Compile Include="Html\I.cs" />
-    <Compile Include="Html\IFrame.cs" />
-    <Compile Include="Html\Img.cs" />
-    <Compile Include="Html\Input.cs" />
-    <Compile Include="Html\Ins.cs" />
-    <Compile Include="Html\Kbd.cs" />
-    <Compile Include="Html\KeyGen.cs" />
-    <Compile Include="Html\Label.cs" />
-    <Compile Include="Html\Legend.cs" />
-    <Compile Include="Html\LI.cs" />
-    <Compile Include="Html\Link.cs" />
-    <Compile Include="Html\Map.cs" />
-    <Compile Include="Html\Mark.cs" />
-    <Compile Include="Html\Menu.cs" />
-    <Compile Include="Html\Meta.cs" />
-    <Compile Include="Html\Meter.cs" />
-    <Compile Include="Html\Nav.cs" />
-    <Compile Include="Html\NoScript.cs" />
-    <Compile Include="Html\Obj.cs" />
-    <Compile Include="Html\OL.cs" />
-    <Compile Include="Html\OptGroup.cs" />
-    <Compile Include="Html\Option.cs" />
-    <Compile Include="Html\Output.cs" />
-    <Compile Include="Html\P.cs" />
-    <Compile Include="Html\Param.cs" />
-    <Compile Include="Html\Pre.cs" />
-    <Compile Include="Html\Progress.cs" />
-    <Compile Include="Html\Q.cs" />
-    <Compile Include="Html\RP.cs" />
-    <Compile Include="Html\RT.cs" />
-    <Compile Include="Html\Ruby.cs" />
-    <Compile Include="Html\S.cs" />
-    <Compile Include="Html\Samp.cs" />
-    <Compile Include="Html\Script.cs" />
-    <Compile Include="Html\Section.cs" />
-    <Compile Include="Html\Select.cs" />
-    <Compile Include="Html\Small.cs" />
-    <Compile Include="Html\Source.cs" />
-    <Compile Include="Html\Span.cs" />
-    <Compile Include="Html\Strong.cs" />
-    <Compile Include="Html\Style.cs" />
-    <Compile Include="Html\Sub.cs" />
-    <Compile Include="Html\Summary.cs" />
-    <Compile Include="Html\Sup.cs" />
-    <Compile Include="Html\Table.cs" />
-    <Compile Include="Html\TBody.cs" />
-    <Compile Include="Html\TD.cs" />
-    <Compile Include="Html\TextArea.cs" />
-    <Compile Include="Html\TFoot.cs" />
-    <Compile Include="Html\TH.cs" />
-    <Compile Include="Html\THead.cs" />
-    <Compile Include="Html\Time.cs" />
-    <Compile Include="Html\Title.cs" />
-    <Compile Include="Html\TR.cs" />
-    <Compile Include="Html\Track.cs" />
-    <Compile Include="Html\U.cs" />
-    <Compile Include="Html\UL.cs" />
-    <Compile Include="Html\Var.cs" />
-    <Compile Include="Html\Video.cs" />
-    <Compile Include="Html\Wbr.cs" />
     <Compile Include="Tag.IHtmlString.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

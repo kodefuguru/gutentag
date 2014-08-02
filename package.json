@@ -1,8 +1,7 @@
 {
-    "name": "gutentag",
+    "name": "GutenTag",
     "version": "0.1.0",
-    "title": "GutenTag",
-    "description": "Markup in Declarative C#",
+    "description": "The closest thing to XML/HTML literals in C#",
     "keywords": ["declarative", "markup", "xml literals", "tag", "tagbuilder"],
     "author": {
         "name": "Chris Eargle",
@@ -36,7 +35,7 @@
     "licenses": [
       {
           "type": "MIT",
-          "url": "http://opensource.org/licenses/MIT"
+          "url": "http://kodefuguru.com/gutentag/license"
       }
     ],    
     "dependencies": {},
