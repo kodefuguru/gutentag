@@ -1,20 +1,20 @@
-namespace Guten
-{
-    using System;
-    using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
+namespace GutenTag
+{
     internal class TagPropertyFactory
     {
         private readonly Dictionary<string, Func<TagProperty>> factories = new Dictionary<string, Func<TagProperty>>();
 
         public void Default<T>() where T : TagProperty, new()
         {
-            Register<T>(String.Empty);
+            Register<T>(string.Empty);
         }
 
         public void Default(Func<TagProperty> factory)
         {
-            Register(String.Empty, factory);
+            Register(string.Empty, factory);
         }
 
         public void Register(string name, Func<TagProperty> factory)
@@ -34,14 +34,15 @@ namespace Guten
             Register(name, () => new T());
         }
 
-        public void Register<T, TModifier>(string name) where T : TagProperty, new() where TModifier : TagPropertyModifier, new()
+        public void Register<T, TModifier>(string name) where T : TagProperty, new()
+            where TModifier : TagPropertyModifier, new()
         {
             Register<T>(name);
             RegisterModifier<TModifier>(name);
         }
 
-        public void Register<T, TModifier, TModifier2>(string name) 
-            where T : TagProperty, new() 
+        public void Register<T, TModifier, TModifier2>(string name)
+            where T : TagProperty, new()
             where TModifier : TagPropertyModifier, new()
             where TModifier2 : TagPropertyModifier, new()
         {
@@ -50,8 +51,8 @@ namespace Guten
             RegisterModifier<TModifier2>(name);
         }
 
-        public void Register<T, TModifier, TModifier2, TModifier3>(string name) 
-            where T : TagProperty, new() 
+        public void Register<T, TModifier, TModifier2, TModifier3>(string name)
+            where T : TagProperty, new()
             where TModifier : TagPropertyModifier, new()
             where TModifier2 : TagPropertyModifier, new()
             where TModifier3 : TagPropertyModifier, new()
@@ -62,8 +63,8 @@ namespace Guten
             RegisterModifier<TModifier3>(name);
         }
 
-        public void Register<T, TModifier, TModifier2, TModifier3, TModifier4>(string name) 
-            where T : TagProperty, new() 
+        public void Register<T, TModifier, TModifier2, TModifier3, TModifier4>(string name)
+            where T : TagProperty, new()
             where TModifier : TagPropertyModifier, new()
             where TModifier2 : TagPropertyModifier, new()
             where TModifier3 : TagPropertyModifier, new()
@@ -76,9 +77,9 @@ namespace Guten
             RegisterModifier<TModifier4>(name);
         }
 
-        
-        public void Register<T, TModifier, TModifier2, TModifier3, TModifier4, TModifier5>(string name) 
-            where T : TagProperty, new() 
+
+        public void Register<T, TModifier, TModifier2, TModifier3, TModifier4, TModifier5>(string name)
+            where T : TagProperty, new()
             where TModifier : TagPropertyModifier, new()
             where TModifier2 : TagPropertyModifier, new()
             where TModifier3 : TagPropertyModifier, new()
@@ -93,7 +94,7 @@ namespace Guten
             RegisterModifier<TModifier5>(name);
         }
 
-        
+
         public void RegisterModifier<T>(string name) where T : TagPropertyModifier, new()
         {
             if (factories.ContainsKey(name))
@@ -117,9 +118,15 @@ namespace Guten
 
         public TagProperty Create(string name)
         {
-            name = name ?? String.Empty;
-            if (factories.ContainsKey(name)) return factories[name]();
-            if (factories.ContainsKey(String.Empty)) return factories[String.Empty]();
+            name = name ?? string.Empty;
+            if (factories.ContainsKey(name))
+            {
+                return factories[name]();
+            }
+            if (factories.ContainsKey(string.Empty))
+            {
+                return factories[string.Empty]();
+            }
             return null;
         }
     }

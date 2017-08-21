@@ -1,7 +1,5 @@
-namespace Guten
+namespace GutenTag
 {
-    using System;
-    
     internal class TagProperty
     {
         private string value;
@@ -11,7 +9,7 @@ namespace Guten
             Modifier = new TagPropertyModifier();
         }
 
-        protected TagPropertyModifier Modifier { get; private set; }
+        protected TagPropertyModifier Modifier { get; }
 
         protected virtual string CoreSet(string value)
         {
@@ -28,7 +26,7 @@ namespace Guten
 
         public virtual string Get()
         {
-            return this.value;
+            return value;
         }
 
         public virtual string CoreAdd(string value)
@@ -46,7 +44,7 @@ namespace Guten
 
         public virtual string Remove()
         {
-            return this.value = null;
+            return value = null;
         }
 
         public virtual string Remove(string value)

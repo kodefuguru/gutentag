@@ -1,17 +1,18 @@
-namespace Guten
-{
-    using System.Text;
+using System.Text;
 
+namespace GutenTag
+{
     public abstract class TagWriter
     {
         private readonly TagWriter next;
-        protected StringBuilder Output { get; private set; }
 
         public TagWriter(TagWriter next = null)
         {
             this.next = next;
             Output = next == null ? new StringBuilder() : next.Output;
         }
+
+        protected StringBuilder Output { get; }
 
         public virtual string GetOutput()
         {
@@ -25,6 +26,7 @@ namespace Guten
                 next.OpenStartTag(name);
             }
         }
+
         public virtual void CloseStartTag(string name)
         {
             if (next != null)
@@ -32,6 +34,7 @@ namespace Guten
                 next.CloseStartTag(name);
             }
         }
+
         public virtual void Attribute(string name, string value)
         {
             if (next != null)
@@ -39,6 +42,7 @@ namespace Guten
                 next.Attribute(name, value);
             }
         }
+
         public virtual void OpenEndTag(string name)
         {
             if (next != null)
@@ -46,6 +50,7 @@ namespace Guten
                 next.OpenEndTag(name);
             }
         }
+
         public virtual void CloseEndTag(string name)
         {
             if (next != null)
@@ -53,6 +58,7 @@ namespace Guten
                 next.CloseEndTag(name);
             }
         }
+
         public virtual void Contents(string contents)
         {
             if (next != null)
@@ -60,6 +66,7 @@ namespace Guten
                 next.Contents(contents);
             }
         }
+
         public virtual void Text(string text)
         {
             if (next != null)

@@ -1,4 +1,4 @@
-namespace Guten
+namespace GutenTag
 {
     internal class SetLowerCase : TagPropertyModifier
     {

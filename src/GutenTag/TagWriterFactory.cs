@@ -1,4 +1,4 @@
-namespace Guten
+namespace GutenTag
 {
     public abstract class TagWriterFactory
     {

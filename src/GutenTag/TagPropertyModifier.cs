@@ -1,11 +1,21 @@
-namespace Guten
-{
-    using System.Collections;
-    using System.Collections.Generic;
+using System.Collections;
+using System.Collections.Generic;
 
+namespace GutenTag
+{
     internal class TagPropertyModifier : IEnumerable<TagPropertyModifier>
     {
         private TagPropertyModifier next;
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public IEnumerator<TagPropertyModifier> GetEnumerator()
+        {
+            return Chain().GetEnumerator();
+        }
 
         private IEnumerable<TagPropertyModifier> Chain()
         {
@@ -17,16 +27,6 @@ namespace Guten
                     yield return modifier;
                 }
             }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
-        }
-
-        public IEnumerator<TagPropertyModifier> GetEnumerator()
-        {
-            return Chain().GetEnumerator();
         }
 
         public string ModifyReceived(string value, string current)
@@ -77,7 +77,7 @@ namespace Guten
         public void Add(TagPropertyModifier modifier)
         {
             if (modifier != null)
-            { 
+            {
                 if (next == null)
                 {
                     next = modifier;
