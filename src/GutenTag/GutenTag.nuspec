@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>GutenTag</id>
+        <version>1.0.0</version>
+        <title>GutenTag</title>
+        <authors>Chris Eargle</authors>
+        <projectUrl>https://github.com/kodefuguru/gutentag</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Markup in Declarative C#</description>
+        <summary>Markup in Declarative C#</summary>
+    </metadata>
+    <files>
+        <file src="bin\Debug\netstandard2.0\GutenTag.dll" target="lib\netstandard2.0\GutenTag.dll" />
+    </files>
+</package>

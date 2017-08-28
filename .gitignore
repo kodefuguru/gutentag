@@ -6,3 +6,4 @@ dist/
 packages/
 bin/
 obj/
+src/.vs/GutenTag/v15/sqlite3/storage.ide
