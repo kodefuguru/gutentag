@@ -1,6 +1,6 @@
-namespace Guten.Html
+namespace GutenTag.Html
 {
-    public class Div : Tag 
+    public class Div : Tag
     {
         public Div() : base("div")
         {

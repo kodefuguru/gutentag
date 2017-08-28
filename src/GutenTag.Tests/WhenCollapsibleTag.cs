@@ -1,10 +1,11 @@
-namespace Guten
-{
-    using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace GutenTag.Tests
+{
+    [TestClass]
     public class WhenCollapsibleTag
-    {       
-        [Test]
+    {
+        [TestMethod]
         public void IsEmpty()
         {
             var tag = new CollapsibleTag("foo");

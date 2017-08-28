@@ -1,4 +1,4 @@
-namespace Guten.Html
+namespace GutenTag.Html
 {
     public class Progress : Tag
     {

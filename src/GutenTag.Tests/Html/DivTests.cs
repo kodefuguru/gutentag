@@ -1,15 +1,16 @@
-namespace Guten.Html
-{
-    using MbUnit.Framework;
+using GutenTag.Html;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+namespace GutenTag.Tests.Html
+{
+    [TestClass]
     public class DivTests
     {
-        [Test]
+        [TestMethod]
         public void Empty()
         {
-            var expected = "<div></div>";
-            var tag = new Div { };
+            const string expected = "<div></div>";
+            var tag = new Div();
             var actual = tag.ToString();
             Assert.AreEqual(expected, actual);
         }

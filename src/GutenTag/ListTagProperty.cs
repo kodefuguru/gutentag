@@ -1,4 +1,4 @@
-namespace Guten
+namespace GutenTag
 {
     internal class ListTagProperty : TagProperty
     {
@@ -12,7 +12,7 @@ namespace Guten
 
         public override string Get()
         {
-            return this.value.ToString();
+            return value.ToString();
         }
 
         public override string CoreAdd(string value)
@@ -31,7 +31,7 @@ namespace Guten
 
         public override string Remove()
         {
-            this.value.Clear();
+            value.Clear();
             return Get();
         }
 

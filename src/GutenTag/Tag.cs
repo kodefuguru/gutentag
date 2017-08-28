@@ -1,34 +1,43 @@
-﻿namespace Guten
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace GutenTag
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Linq;
-    
-    public partial class Tag : IEnumerable<Tag>, IEnumerable<KeyValuePair<string, string>>
+    public class Tag : IEnumerable<Tag>, IEnumerable<KeyValuePair<string, string>>
     {
-        protected string Name { get; private set; }
+        private readonly Dictionary<string, TagProperty> attributes = new Dictionary<string, TagProperty>();
 
         private readonly List<Tag> children = new List<Tag>();
-        private readonly Dictionary<string, TagProperty> attributes = new Dictionary<string, TagProperty>();
         private readonly TagPropertyFactory property;
 
         public Tag(string tagName)
         {
             Name = tagName;
-            this.property = new TagPropertyFactory();
-            RegisterProperties(this.property);
+            property = new TagPropertyFactory();
+            RegisterProperties(property);
         }
 
-        internal virtual void RegisterProperties(TagPropertyFactory factory)
+        protected string Name { get; }
+
+        public string this[string name]
         {
-            factory.Default<TagProperty>();
-            factory.Register<ListTagProperty>("class");    
+            get => attributes[name].Get();
+            set => attributes?[name].Set(value);
+        }
+
+        public Tag this[int position] => children.ElementAtOrDefault(position);
+
+        IEnumerator<KeyValuePair<string, string>> IEnumerable<KeyValuePair<string, string>>.GetEnumerator()
+        {
+            return attributes
+                .Select(attribute => new KeyValuePair<string, string>(attribute.Key, attribute.Value.Get()))
+                .GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return this.GetEnumerator();
+            return GetEnumerator();
         }
 
         public IEnumerator<Tag> GetEnumerator()
@@ -36,25 +45,10 @@
             return children.GetEnumerator();
         }
 
-        IEnumerator<KeyValuePair<string, string>> IEnumerable<KeyValuePair<string, string>>.GetEnumerator()
+        internal virtual void RegisterProperties(TagPropertyFactory factory)
         {
-            return attributes.Select(attribute => new KeyValuePair<string, string>(attribute.Key, attribute.Value.Get())).GetEnumerator();
-        }
-
-        public string this[string name]
-        {
-            get
-            {
-                return attributes[name].Get();
-            }
-        }
-
-        public Tag this[int position]
-        {
-            get 
-            {
-                return children.ElementAtOrDefault(position);
-            }
+            factory.Default<TagProperty>();
+            factory.Register<ListTagProperty>("class");
         }
 
         public void Add(object obj)
@@ -74,22 +68,24 @@
 
         public void Add(IEnumerable<KeyValuePair<string, string>> attributes)
         {
-            foreach(var pair in attributes)
+            foreach (var pair in attributes)
             {
-                this.Add(pair.Key, pair.Value);
+                Add(pair.Key, pair.Value);
             }
         }
 
         public void Add(string name, string value)
         {
-            if (String.IsNullOrWhiteSpace(name))
+            if (string.IsNullOrWhiteSpace(name))
+            {
                 return;
+            }
 
             name = name.ToLower();
             if (attributes.ContainsKey(name))
             {
                 attributes[name].Add(value);
-            }            
+            }
             else
             {
                 var attribute = property.Create(name);
@@ -108,7 +104,7 @@
 
         public virtual string ToString(TagWriterFactory factory)
         {
-            TagWriter writer = factory.CreateWriter(this);
+            var writer = factory.CreateWriter(this);
 
             writer.OpenStartTag(Name);
             foreach (var attribute in attributes)
@@ -131,14 +127,14 @@
             private readonly string text;
 
             public Text(string text)
-                : base(String.Empty)
+                : base(string.Empty)
             {
                 this.text = text;
             }
 
             public override string ToString()
             {
-                return this.text;
+                return text;
             }
 
             public override string ToString(TagWriterFactory factory)
@@ -148,7 +144,5 @@
                 return writer.GetOutput();
             }
         }
-
     }
-
 }

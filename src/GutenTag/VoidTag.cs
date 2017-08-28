@@ -1,4 +1,4 @@
-namespace Guten
+namespace GutenTag
 {
     [Void]
     public class VoidTag : Tag

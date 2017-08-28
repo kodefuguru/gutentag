@@ -1,17 +1,16 @@
-﻿namespace Guten.Html
-{
-    using System;
-    using System.Linq;
-    using MbUnit.Framework;
+﻿using GutenTag.Html;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+namespace GutenTag.Tests.Html
+{
+    [TestClass]
     public class BrTests
     {
-        [Test]
+        [TestMethod]
         public void Empty()
         {
-            var expected = "<br>";
-            var tag = new Br { };
+            const string expected = "<br>";
+            var tag = new Br();
             var actual = tag.ToString();
             Assert.AreEqual(expected, actual);
         }

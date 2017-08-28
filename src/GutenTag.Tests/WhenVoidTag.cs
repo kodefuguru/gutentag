@@ -1,11 +1,11 @@
-namespace Guten
-{
-    using MbUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestFixture]
+namespace GutenTag.Tests
+{
+    [TestClass]
     public class WhenVoidTag
     {
-        [Test]
+        [TestMethod]
         public void IsEmpty()
         {
             var tag = new VoidTag("foo");

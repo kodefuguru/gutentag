@@ -1,4 +1,4 @@
-namespace Guten.Html
+namespace GutenTag.Html
 {
     [Void]
     public class Col : Tag

@@ -1,4 +1,4 @@
-namespace Guten
+namespace GutenTag
 {
     internal abstract class PropertyDefinitions
     {

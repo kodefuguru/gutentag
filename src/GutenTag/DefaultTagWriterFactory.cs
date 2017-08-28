@@ -1,39 +1,12 @@
-namespace Guten
-{
-    using System;
-    using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
+namespace GutenTag
+{
     public class DefaultTagWriterFactory : TagWriterFactory
     {
-        private static readonly Dictionary<Type, Func<TagWriter, TagWriter>> writers = new Dictionary<Type, Func<TagWriter, TagWriter>>();
-
-        public static void Register(Type type, Func<TagWriter, TagWriter> decorator)
-        {
-            if (decorator != null)
-            { 
-                if (writers.ContainsKey(type))
-                {
-                    writers[type] = writer => decorator(writers[type](writer));
-                }
-                else
-                {
-                    writers[type] = decorator;
-                }
-            }
-        }
-
-        public static void Register<T>(Func<TagWriter, TagWriter> decorator)
-        {
-            Register(typeof(T), decorator);
-        }
-
-        public static void Unregister(Type type)
-        {
-            if (writers.ContainsKey(type))
-            {
-                writers.Remove(type);   
-            }
-        }
+        private static readonly Dictionary<Type, Func<TagWriter, TagWriter>> Writers =
+            new Dictionary<Type, Func<TagWriter, TagWriter>>();
 
         static DefaultTagWriterFactory()
         {
@@ -41,11 +14,42 @@ namespace Guten
             Register<CollapsibleAttribute>(t => new CollapsibleWriter(t));
         }
 
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static void Register(Type type, Func<TagWriter, TagWriter> decorator)
+        {
+            if (decorator != null)
+            {
+                if (Writers.ContainsKey(type))
+                {
+                    Writers[type] = writer => decorator(Writers[type](writer));
+                }
+                else
+                {
+                    Writers[type] = decorator;
+                }
+            }
+        }
+
+        // ReSharper disable once MemberCanBePrivate.Global
+        public static void Register<T>(Func<TagWriter, TagWriter> decorator)
+        {
+            Register(typeof(T), decorator);
+        }
+
+        // ReSharper disable once UnusedMember.Global
+        public static void Unregister(Type type)
+        {
+            if (Writers.ContainsKey(type))
+            {
+                Writers.Remove(type);
+            }
+        }
+
         private TagWriter Decorate(TagWriter writer, Type type)
         {
-            if (writers.ContainsKey(type))
+            if (Writers.ContainsKey(type))
             {
-                writer = writers[type](writer);
+                writer = Writers[type](writer);
             }
             return writer;
         }
@@ -53,7 +57,8 @@ namespace Guten
         private TagWriter CreateWriter(Type type)
         {
             TagWriter writer = new DefaultWriter();
-            
+
+            // ReSharper disable once LoopCanBeConvertedToQuery
             foreach (var attribute in type.GetCustomAttributes(true))
             {
                 writer = Decorate(writer, attribute.GetType());
@@ -106,6 +111,7 @@ namespace Guten
             {
                 Output.Append("</" + name);
             }
+
             public override void CloseEndTag(string name)
             {
                 Output.Append(">");
@@ -119,7 +125,6 @@ namespace Guten
 
         private class NullWriter : TagWriter
         {
-
         }
 
         private class VoidWriter : TagWriter
@@ -128,12 +133,15 @@ namespace Guten
                 : base(next)
             {
             }
+
             public override void Contents(string contents)
             {
             }
+
             public override void OpenEndTag(string name)
             {
             }
+
             public override void CloseEndTag(string name)
             {
             }
@@ -141,20 +149,22 @@ namespace Guten
 
         private class CollapsibleWriter : TagWriter
         {
-            private bool contentsWritten = false;
-            
+            private bool _contentsWritten;
+
             public CollapsibleWriter(TagWriter next)
                 : base(next)
             {
             }
+
             public override void Contents(string contents)
             {
-                contentsWritten = true;
+                _contentsWritten = true;
                 base.Contents(contents);
             }
+
             public override void OpenEndTag(string name)
             {
-                if (contentsWritten)
+                if (_contentsWritten)
                 {
                     base.OpenEndTag(name);
                 }
@@ -163,9 +173,10 @@ namespace Guten
                     Output.Insert(Output.Length - 1, " /");
                 }
             }
+
             public override void CloseEndTag(string name)
             {
-                if (contentsWritten)
+                if (_contentsWritten)
                 {
                     base.CloseEndTag(name);
                 }

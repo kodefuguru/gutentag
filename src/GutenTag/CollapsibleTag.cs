@@ -1,4 +1,4 @@
-namespace Guten
+namespace GutenTag
 {
     [Collapsible]
     public class CollapsibleTag : Tag
