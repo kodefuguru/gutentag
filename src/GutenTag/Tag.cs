@@ -6,9 +6,10 @@ namespace GutenTag
 {
     public class Tag : IEnumerable<Tag>, IEnumerable<KeyValuePair<string, string>>
     {
-        private readonly Dictionary<string, TagProperty> attributes = new Dictionary<string, TagProperty>();
+        protected readonly Dictionary<string, TagProperty> Attributes = new Dictionary<string, TagProperty>();
 
-        private readonly List<Tag> children = new List<Tag>();
+        protected readonly List<Tag> Children = new List<Tag>();
+
         private readonly TagPropertyFactory property;
 
         public Tag(string tagName)
@@ -22,15 +23,25 @@ namespace GutenTag
 
         public string this[string name]
         {
-            get => attributes[name].Get();
-            set => attributes?[name].Set(value);
+            get => Attributes[name].Get();
+            set => Attributes?[name].Set(value);
         }
 
-        public Tag this[int position] => children.ElementAtOrDefault(position);
+        public Tag this[Tag tag]
+        {
+            get => Children.Find(p => p == tag);
+            set => Children[Children.IndexOf(tag)] = value;
+        }
+
+        public Tag this[int position]
+        {
+            get { return Children.ElementAtOrDefault(position); }
+            set { Children[position] = value; }
+        }
 
         IEnumerator<KeyValuePair<string, string>> IEnumerable<KeyValuePair<string, string>>.GetEnumerator()
         {
-            return attributes
+            return Attributes
                 .Select(attribute => new KeyValuePair<string, string>(attribute.Key, attribute.Value.Get()))
                 .GetEnumerator();
         }
@@ -42,7 +53,7 @@ namespace GutenTag
 
         public IEnumerator<Tag> GetEnumerator()
         {
-            return children.GetEnumerator();
+            return Children.GetEnumerator();
         }
 
         internal virtual void RegisterProperties(TagPropertyFactory factory)
@@ -58,12 +69,12 @@ namespace GutenTag
 
         public void Add(string text)
         {
-            children.Add(new Text(text));
+            Children.Add(new Text(text));
         }
 
         public void Add(Tag tag)
         {
-            children.Add(tag);
+            Children.Add(tag);
         }
 
         public void Add(IEnumerable<KeyValuePair<string, string>> attributes)
@@ -82,9 +93,9 @@ namespace GutenTag
             }
 
             name = name.ToLower();
-            if (attributes.ContainsKey(name))
+            if (Attributes.ContainsKey(name))
             {
-                attributes[name].Add(value);
+                Attributes[name].Add(value);
             }
             else
             {
@@ -92,7 +103,7 @@ namespace GutenTag
                 if (attribute != null)
                 {
                     attribute.Set(value);
-                    attributes.Add(name, attribute);
+                    Attributes.Add(name, attribute);
                 }
             }
         }
@@ -107,12 +118,12 @@ namespace GutenTag
             var writer = factory.CreateWriter(this);
 
             writer.OpenStartTag(Name);
-            foreach (var attribute in attributes)
+            foreach (var attribute in Attributes)
             {
                 writer.Attribute(attribute.Key, attribute.Value.Get());
             }
             writer.CloseStartTag(Name);
-            foreach (var child in children)
+            foreach (var child in Children)
             {
                 writer.Contents(child.ToString(factory));
             }

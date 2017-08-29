@@ -1,12 +1,17 @@
 namespace GutenTag
 {
-    internal class TagProperty
+    public class TagProperty
     {
         private string value;
 
         public TagProperty()
         {
             Modifier = new TagPropertyModifier();
+        }
+
+        public TagProperty(string value) : this()
+        {
+            Set(value);
         }
 
         protected TagPropertyModifier Modifier { get; }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GutenTag
 {
-    internal class TagPropertyModifier : IEnumerable<TagPropertyModifier>
+    public class TagPropertyModifier : IEnumerable<TagPropertyModifier>
     {
         private TagPropertyModifier next;
 
